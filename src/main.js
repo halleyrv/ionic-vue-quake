@@ -12,7 +12,7 @@ Vue.use(Ionic)
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'PUT HERE YOUR KEY GOOGLE',
+    key: process.env.VUE_APP_GOOGLE_KEY,
     libraries: 'places', // This is required if you use the Autocomplete plugin
     // OR: libraries: 'places,drawing'
     // OR: libraries: 'places,drawing,visualization'
