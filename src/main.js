@@ -5,7 +5,8 @@ import Ionic from "@ionic/vue"
 import "@ionic/core/css/core.css"
 import "@ionic/core/css/ionic.bundle.css"
 import * as VueGoogleMaps from 'vue2-google-maps'
-
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
 Vue.use(Ionic)
@@ -23,7 +24,7 @@ Vue.use(VueGoogleMaps, {
   },
   installComponents: true
 })
-
+Vue.use(VueAxios, axios)
 new Vue({
   router,
   render: h => h(App)
