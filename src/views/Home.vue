@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+
+<ion-app>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+     <QuakeMap />
+  </ion-content>
+</ion-app>
+  
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import QuakeMap from '@/components/QuakeMap.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    QuakeMap
   }
 }
 </script>
