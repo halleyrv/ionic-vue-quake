@@ -10,6 +10,7 @@
         :key="index"
         v-for="(m, index) in markers"
         :position="m.position"
+        :icon="m.icon"
         @click="center=m.position"
       ></gmap-marker>
     </gmap-map>
@@ -24,14 +25,11 @@ export default {
 
       center: { lat: -35.675148, lng: -71.5429688 },
       markers: [],
-      places: [],
-      sismos: [],
-      currentPlace: null
+      sismos: []
     };
   },
 
   mounted() {
-    //this.geolocate();
     this.loadMarkers();
   },
 
@@ -48,15 +46,31 @@ export default {
           this.sismos.forEach(element => {
           const marker = {
             lat: element.latitude,
-            lng: element.longitude
+            lng: element.longitude,
+            icon: this.getColorMagnitude(element.magnitude)
           };
-          this.markers.push({ position: marker });
+          this.markers.push({ position: marker ,icon: marker.icon});
         });
       } catch (error) {
         console.log(error)
       }
       
     
+    },
+    getColorMagnitude(magnitude){
+      let icon ="http://maps.google.com/mapfiles/ms/icons/"
+      switch (true) {
+        case (magnitude<=4):
+          icon = icon+  "green-dot.png" 
+          break;
+        case (magnitude <=6):
+          icon = icon+  "yellow-dot.png" 
+          break;
+        default:
+          icon = icon + "red-dot.png"
+          break;
+      }
+     return icon
     }
   }
 }
