@@ -25,14 +25,11 @@ export default {
 
       center: { lat: -35.675148, lng: -71.5429688 },
       markers: [],
-      places: [],
-      sismos: [],
-      currentPlace: null
+      sismos: []
     };
   },
 
   mounted() {
-    //this.geolocate();
     this.loadMarkers();
   },
 
@@ -47,13 +44,11 @@ export default {
           this.sismos = data.ultimos_sismos
     
           this.sismos.forEach(element => {
-            console.log(element.magnitude)
           const marker = {
             lat: element.latitude,
             lng: element.longitude,
             icon: this.getColorMagnitude(element.magnitude)
           };
-          console.log("Markers " + marker.icon)
           this.markers.push({ position: marker ,icon: marker.icon});
         });
       } catch (error) {
