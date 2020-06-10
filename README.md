@@ -1,4 +1,5 @@
-# sismo-vue
+# Quake in World
+This app was created in ionic with Vue and show quakes in world diferenced by colors according magnitud
 
 ## Project setup
 ```
