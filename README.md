@@ -25,6 +25,7 @@ yarn test:unit
 ```
 yarn lint
 ```
-
+### Configuration
+In file .env you replace the key of GoogleMaps in variable VUE_APP_GOOGLE_KEY
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
